@@ -20,14 +20,16 @@ buildscript {
     }
 
     dependencies {
-        classpath 'uk.co.cacoethes:lazybones-gradle:1.0.3'
+        classpath 'uk.co.cacoethes:lazybones-gradle:1.1'
+        //classpath 'uk.co.cacoethes:lazybones-gradle:1.0.4'
     }
 }
 
 apply plugin: 'lazybones-templates'
 
 lazybones {
-    repositoryUrl = 'https://api.bintray.com/content/aalmiray/kordamp'
+    repositoryUrl = 'https://api.bintray.com/content/svene/lazybones'
     repositoryUsername = project.bintrayUsername
     repositoryApiKey = project.bintrayApiKey
 }
+
