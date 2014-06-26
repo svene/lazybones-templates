@@ -8,8 +8,8 @@ repositories {
     jcenter()
 }
 
-group = 'thegroup'
-version = '0.0.1-SNAPSHOT'
+group = '$project_group'
+version = '$project_version'
 
 
 repositories {
