@@ -1,0 +1,5 @@
+= JavaEE 7 Lazybones Template
+
+to setup a plain and clean JavaEE 7 project folder including gradle and maven support.
+
+Credit goes to Adam Bien who created the original maven archetype: https://github.com/AdamBien/javaee7-essentials-archetype
