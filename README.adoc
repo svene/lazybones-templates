@@ -27,7 +27,10 @@ bintrayRepositories = [
 Grab the distribution from https://bintray.com/pkg/show/general/pledbrook/lazybones-templates/lazybones[Bintray], unpack it to a local directory, and then add its +bin+ directory to your PATH environment variable.
 
 == Usage
-Example using the 'javaee-seven' template: In an arbitrary directory execute +lazybones create javaee-seven myjavaee7project+ which will create the folder +myjavaee7project+ and expand the template into it.
+
+=== JavaEE 7 Template
+In an arbitrary directory execute +lazybones create javaee-seven myjavaee7project+ which will create the folder +myjavaee7project+ and expand the template into it.
+The folder contains a +build.gradle+ file for the gradle folks and a +pom.xml+ for those who prefer maven. BTW: all the credit goes to Adam Bien of course: https://github.com/AdamBien/javaee7-essentials-archetype
 
 == Development
 
