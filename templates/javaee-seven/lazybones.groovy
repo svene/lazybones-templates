@@ -1,7 +1,7 @@
 import uk.co.cacoethes.util.NameType
 
 Map props = [:]
-File projectDir = targetDir instanceof File ? targetDir : new File(String.valueOf(targetDir))
+File projectDir = projectDir instanceof File ? projectDir : new File(String.valueOf(projectDir))
 props.project_name = transformText(projectDir.name, from: NameType.HYPHENATED, to: NameType.PROPERTY)
 
 props.project_group = ask2('group', 'org.group')
