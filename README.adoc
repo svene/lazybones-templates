@@ -35,4 +35,6 @@ Example using the 'javaee-seven' template: In an arbitrary directory execute +la
 * In top folder execute +./gradlew installTemplateJavaeeSeven+ which will install the +javaee-seven+ template into +~/.lazybones/templates/javaee-seven-0.0.1.zip+
 * In an arbitrary directory execute +lazybones create javaee-seven 0.0.1 javaee7+ which will create the folder +javaee7+ and expand the template into it.
 * Repeat the previous steps until you are satisfied with the result
-* Deploy: TBD
+
+== Publishing
+* In the top level folder invoke +./gradlew publishTemplateJavaeeSeven+ . Note: the first time a package needs to be created with the bintray Web-GUI (in my case in the 'lazybones' repository) with a name ending in '-template' (for this example 'javaee-seven-template').
