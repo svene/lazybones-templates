@@ -1,0 +1,29 @@
+= Various Lazybones templates
+
+== Installation of Lazybones using gvm (Linux, OS/X)
+
+Install gvm:
+
+-----------
+$ curl -s get.gvmtool.net | bash
+-----------
+
+Install lazybones:
+
+-----------
+$ gvm install lazybones
+-----------
+
+== Installation of Lazybones without gvm
+Grab the distribution from https://bintray.com/pkg/show/general/pledbrook/lazybones-templates/lazybones[Bintray], unpack it to a local directory, and then add its +bin+ directory to your PATH environment variable.
+
+== Usage
+Example using the 'javaee-seven' template: In an arbitrary directory execute +lazybones create javaee-seven myjavaee7project+ which will create the folder +myjavaee7project+ and expand the template into it.
+
+== Development
+
+* Make a change in a template, e.g. +templates/javaee-seven+
+* In top folder execute +./gradlew installTemplateJavaeeSeven+ which will install the +javaee-seven+ template into +~/.lazybones/templates/javaee-seven-0.0.1.zip+
+* In an arbitrary directory execute +lazybones create javaee-seven 0.0.1 javaee7+ which will create the folder +javaee7+ and expand the template into it.
+* Repeat the previous steps until you are satisfied with the result
+* Deploy: TBD
