@@ -4,7 +4,7 @@ Map props = [:]
 File projectDir = targetDir instanceof File ? targetDir : new File(String.valueOf(targetDir))
 props.project_name = transformText(projectDir.name, from: NameType.HYPHENATED, to: NameType.PROPERTY)
 
-props.project_group = ask2('group', 'org.example')
+props.project_group = ask2('group', 'org.group')
 props.project_version = ask2('version', '0.1.0-SNAPSHOT')
 props.project_package_name = ask2('packageName', props.project_group)
 
