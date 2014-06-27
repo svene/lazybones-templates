@@ -27,7 +27,6 @@ File resourcesPath = new File(resources, packagePath)
 resourcesPath.mkdirs()
 
 sources.eachFile { File file ->
-	println "--> ${file.name} "
    file.renameTo(sourcesPath.absolutePath + '/' + file.name)
 }
 
