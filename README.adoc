@@ -32,6 +32,13 @@ Grab the distribution from https://bintray.com/pkg/show/general/pledbrook/lazybo
 In an arbitrary directory execute +lazybones create javaee-seven myjavaee7project+ which will create the folder +myjavaee7project+ and expand the template into it.
 The folder contains a +build.gradle+ file for the gradle folks and a +pom.xml+ for those who prefer maven. BTW: all the credit goes to Adam Bien of course: https://github.com/AdamBien/javaee7-essentials-archetype
 
+==== Subtemplate 'jaxrs-sample-registrations'
+Installs the 'registrations' JAX-RS example (including Arquillian tests) Adam Bien uses during the Airhacks workshop. The template was created from the following
+Adam's maven BCE archetype: http://www.adam-bien.com/roller/abien/entry/java_ee_maven_archetype_bce
+
+Usage: After having executed the +javaee-seven+ template change into the new project directory and execute +lazybones generate jaxrs-sample-registrations+. This
+will
+
 == Development
 
 * Make a change in a template, e.g. +templates/javaee-seven+
