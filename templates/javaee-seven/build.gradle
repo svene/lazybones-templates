@@ -16,7 +16,13 @@ repositories {
 }
 dependencies {
 	providedCompile 'javax:javaee-api:7.0'
+
 	testCompile 'junit:junit:4.11'
+	testCompile 'org.jboss.arquillian:arquillian-bom:1.1.4.Final'
+	testCompile 'org.jboss.arquillian.junit:arquillian-junit-container:1.1.4.Final'
+	testCompile 'org.jboss.weld:weld-core:2.2.1.Final'
+	testCompile 'org.jboss.arquillian.container:arquillian-weld-ee-embedded-1.1:1.0.0.CR8'
+	testCompile 'org.mockito:mockito-all:1.9.5'
 }
 
 //sourceCompatibility = 1.8

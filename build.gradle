@@ -31,5 +31,7 @@ lazybones {
     repositoryUrl = 'https://api.bintray.com/content/svene/lazybones'
     repositoryUsername = project.bintrayUsername
     repositoryApiKey = project.bintrayApiKey
+
+    template "javaee-seven" includes "jaxrs-sample-registrations"
 }
 
