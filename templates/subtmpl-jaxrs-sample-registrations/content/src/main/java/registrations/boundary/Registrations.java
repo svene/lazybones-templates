@@ -24,16 +24,16 @@ public class Registrations {
     @Inject
     Logger tracer;
 
-    public Registration register(Registration request) {
-        tracer.info("registration arrived: " + request);
-        Registration registration = em.merge(request);
-        tracer.info("registration stored: " + request);
+    public Registration register(Registration requestedRegistration) {
+        tracer.info("registration arrived: " + requestedRegistration);
+        Registration registration = em.merge(requestedRegistration);
+        tracer.info("registration stored: " + requestedRegistration);
         registration.setCalculator(priceCalculator::calculateTotal);
         tracer.info("price computed: " + registration.getTotalPrice());
         return registration;
     }
 
-    public Registration find(int registrationId) {
+    public Registration find(long registrationId) {
         return this.em.find(Registration.class, registrationId);
     }
 

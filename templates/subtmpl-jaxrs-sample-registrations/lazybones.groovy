@@ -10,22 +10,22 @@ params.pkg = "${parentParams.packageName}"
 params.parentGroup = parentParams.group
 params.parentVersion = parentParams.version
 
-processTemplates("main/**/*", params)
-processTemplates("test/**/*", params)
+processTemplates("content/**/*", params)
 
 def pkgPath = params.pkg.replace('.' as char, '/' as char)
 
-new File(projectDir, concat("src/main/java", pkgPath) ).mkdirs()
-new File(projectDir, concat("src/main/resources", pkgPath) ).mkdirs()
-new File(projectDir, concat("src/test/java", pkgPath) ).mkdirs()
+copyContent('content/src/main/java', 'src/main/java', pkgPath)
+copyContent('content/src/main/resources', 'src/main/resources')
+copyContent('content/src/test/java', 'src/test/java', pkgPath)
+copyContent('content/src/test/stress', 'src/test/stress')
 
-def mainJava = concat('main', 'java')
-FileUtils.moveDirectoryToDirectory(new File(templateDir, concat('main', 'java/registrations')), new File(concat("src/main/java", pkgPath)), true )
-FileUtils.moveDirectoryToDirectory(new File(templateDir, concat('main', 'java/tracing')), new File(concat("src/main/java", pkgPath)), true )
-FileUtils.moveDirectoryToDirectory(new File(templateDir, concat('main', 'resources/META-INF')), new File("src/main/resources"), true )
-FileUtils.moveDirectoryToDirectory(new File(templateDir, concat('main', 'webapp')), new File("src/main"), true )
+def copyContent(String sourceFolder, String targetFolder, String pkgPath=null) {
+	File targetDir = new File(targetFolder)
+	File targetPath = pkgPath ? new File(targetDir, pkgPath) : targetDir
+	targetPath.mkdirs()
 
-FileUtils.moveDirectoryToDirectory(new File(templateDir, concat('test', 'java/registrations')), new File("src/test/java/$pkgPath"), true )
-FileUtils.moveDirectoryToDirectory(new File(templateDir, concat('test', 'java/tracing')), new File("src/test/java/$pkgPath"), true )
-FileUtils.moveDirectoryToDirectory(new File(templateDir, concat('test', 'stress')), new File("src/test"), true )
-
+	File sourcesDir = new File(templateDir, sourceFolder)
+	sourcesDir.eachFile { File file ->
+	   file.renameTo("${targetPath.absolutePath}/${file.name}")
+	}
+}

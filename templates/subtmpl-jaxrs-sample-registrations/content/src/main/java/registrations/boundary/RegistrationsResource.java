@@ -46,10 +46,4 @@ public class RegistrationsResource {
         return registrations.find(registrationId);
     }
 
-    @GET
-    @Path("{id}/dummy")
-    public Registration dummy(@PathParam("id") int registrationId) {
-        return new Registration(true, 1, 1);
-    }
-
 }

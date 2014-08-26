@@ -54,7 +54,9 @@ public class Registration {
     }
 
     public int getTotalPrice() {
-        return taxCalculator.apply(this.vatIdAvailable, getNetPrice());
+        int result = taxCalculator.apply(this.vatIdAvailable, getNetPrice());
+        totalPrice = result;
+        return result;
     }
 
     public boolean isVatIdAvailable() {
