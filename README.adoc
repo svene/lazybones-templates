@@ -29,22 +29,22 @@ Grab the distribution from https://bintray.com/pkg/show/general/pledbrook/lazybo
 == Usage
 
 === JavaEE 7 Template
-In an arbitrary directory execute +lazybones create javaee-seven myjavaee7project+ which will create the folder +myjavaee7project+ and expand the template into it.
+In an arbitrary directory execute +lazybones create javaee7 jee7+ which will create the folder +jee7+ and expand the template into it.
 The folder contains a +build.gradle+ file for the gradle folks and a +pom.xml+ for those who prefer maven. BTW: all the credit goes to Adam Bien of course: https://github.com/AdamBien/javaee7-essentials-archetype
 
 ==== Subtemplate 'jaxrs-sample-registrations'
 Installs the 'registrations' JAX-RS example (including Arquillian tests) Adam Bien uses during the Airhacks workshop. The template was created from the following
 Adam's maven BCE archetype: http://www.adam-bien.com/roller/abien/entry/java_ee_maven_archetype_bce
 
-Usage: After having executed the +javaee-seven+ template change into the new project directory and execute +lazybones generate jaxrs-sample-registrations+. This
-will
+Usage: After having executed the +javaee7+ template change into the new project directory and execute +lazybones generate jaxrs-sample-registrations+. This
+will create additional source files for the _registrations_ feature.
 
-== Development
+== Template Development
 
-* Make a change in a template, e.g. +templates/javaee-seven+
-* In top folder execute +./gradlew installTemplateJavaeeSeven+ which will install the +javaee-seven+ template into +~/.lazybones/templates/javaee-seven-0.0.1.zip+
-* In an arbitrary directory execute +lazybones create javaee-seven 0.0.1 javaee7+ which will create the folder +javaee7+ and expand the template into it.
+* Make a change in a template, e.g. +templates/javaee7+
+* In top folder execute +./gradlew installTemplateJavaee7+ which will install the +javaee7+ template into +~/.lazybones/templates/javaee7-0.0.5.zip+
+* In an arbitrary directory execute +lazybones create javaee7 0.0.5 jee7+ which will create the folder +jee7+ and expand the template into it.
 * Repeat the previous steps until you are satisfied with the result
 
 == Publishing
-* In the top level folder invoke +./gradlew publishTemplateJavaeeSeven+ . Note: the first time a package needs to be created with the bintray Web-GUI (in my case in the 'lazybones' repository) with a name ending in '-template' (for this example 'javaee-seven-template').
+* In the top level folder invoke +./gradlew publishTemplateJavaee7+ . Note: the first time a package needs to be created with the bintray Web-GUI (in my case in the 'lazybones' repository) with a name ending in +-template+ (for this example +javaee7-template+).
